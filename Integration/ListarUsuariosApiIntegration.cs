@@ -6,13 +6,13 @@ using PC3_HUGO.Integration.models;
 
 namespace PC3_HUGO.Integration
 {
-    public class UsuariosApiIntegration
+    public class ListarUsuariosApiIntegration
     {
-        private readonly ILogger<UsuariosApiIntegration> _logger;
+        private readonly ILogger<ListarUsuariosApiIntegration> _logger;
         private const string API_URL="https://reqres.in/api/users";
         private readonly HttpClient httpClient;
 
-        public UsuariosApiIntegration(ILogger<UsuariosApiIntegration> logger){
+        public ListarUsuariosApiIntegration(ILogger<ListarUsuariosApiIntegration> logger){
             _logger = logger;
             httpClient = new HttpClient();
         }
