@@ -18,7 +18,7 @@ namespace PC3_HUGO.Integration
         }
 
         public async Task<Usuario> GetUsuario(int Id){
-            string requestUrl = $"{API_URL}";
+            string requestUrl = $"{API_URL}{Id}";
             Usuario usuario = new Usuario();
             try{
                 HttpResponseMessage response = await httpClient.GetAsync(requestUrl);
