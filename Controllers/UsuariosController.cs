@@ -15,12 +15,16 @@ namespace PC3_HUGO.Controllers
     {
         private readonly ILogger<UsuariosController> _logger;
         private readonly ListarUsuariosApiIntegration _apiListarUsers;
+        private readonly ListarUsuarioApiIntegration _apiUser;
+
 
         public UsuariosController(ILogger<UsuariosController> logger,
-        ListarUsuariosApiIntegration apiListarUsers)
+        ListarUsuariosApiIntegration apiListarUsers,
+        ListarUsuarioApiIntegration apiUser)
         {
             _logger = logger;
             _apiListarUsers=apiListarUsers;
+            _apiUser =apiUser;
         }
         
         [HttpGet]
@@ -29,6 +33,14 @@ namespace PC3_HUGO.Controllers
             List<Usuario> users= await _apiListarUsers.GetAllUsuarios();
             return View(users);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Inicio(int Id)
+        {
+            Usuario usuario= await _apiUser.GetUsuario(Id);
+            return View(usuario);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

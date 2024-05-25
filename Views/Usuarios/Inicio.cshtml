@@ -1,0 +1,18 @@
+@model PC3_HUGO.Integration.models.Usuario
+
+@{
+    ViewData["Title"] = "Datos del Usuario";
+}
+
+<h2>Perfil de Usuario</h2>
+
+<div class="card" style="width: 18rem;">
+    <img src="@Model.Avatar" class="card-img-top" alt="Avatar">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nombre @Model.Apellido</h5>
+        <p class="card-text">
+            <strong>ID:</strong> @Model.Id <br />
+            <strong>Email:</strong> @Model.Email
+        </p>
+    </div>
+</div>

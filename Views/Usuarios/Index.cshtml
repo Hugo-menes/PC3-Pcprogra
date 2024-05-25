@@ -9,6 +9,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Datos</th>
             <th>Id</th>
             <th>Email</th>
             <th>Nombre</th>
@@ -20,6 +21,7 @@
         @foreach (var usuario in Model)
         {
             <tr>
+                <td><a href="@Url.Action("Inicio",new {Id=usuario.Id})">Ver Datos</a></td>
                 <td>@usuario.Id</td>
                 <td>@usuario.Email</td>
                 <td>@usuario.Nombre</td>
